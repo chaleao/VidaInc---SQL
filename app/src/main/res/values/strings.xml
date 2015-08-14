@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Vida Inc</string>
+
+    <string name="UserSettingActivity">Setup View</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="pref_room">Choose the room</string>
+    <string name="pref_room_summary">Set the sync frequency</string>
+    <string name="pref_user_name">Set username</string>
+    <string name="pref_user_name_summary">Set your username</string>
+
+    <string name="pref_user_profile">User Profile</string>
+    <string name="custom_settings">Custom Settings</string>
+    <string name="title_activity_fragment_two">FragmentTwo</string>
+
+    <string name="hello_world">Hello world!</string>
+
+</resources>

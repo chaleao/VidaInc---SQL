@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/custom_settings" >
+
+        <ListPreference
+            android:key="prefRoom"
+            android:entries="@array/roomImgs"
+            android:summary="@string/pref_room_summary"
+            android:entryValues="@array/roomImgsValues"
+            android:title="@string/pref_room" />
+
+        <ListPreference
+            android:key="prefBeacon"
+            android:entries="@array/beaconsArray"
+            android:summary="@string/pref_room_summary"
+            android:entryValues="@array/beaconsArrayValues"
+            android:title="@string/pref_room" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
