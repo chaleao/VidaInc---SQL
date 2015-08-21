@@ -131,6 +131,7 @@ public class FragmentOne extends Fragment{
             for (int i = 0; i < mRoomList.size(); i++) {
 
                 Room b = mRoomList.get(i);
+                if (b.getImage() == null) continue;
                 canvas.drawBitmap(b.getImage(), b.getCurrent().x, b.getCurrent().y, null);
             }
 
