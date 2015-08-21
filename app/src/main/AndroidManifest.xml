@@ -22,6 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:name=".database.BeaconProvider"
+            android:authorities="@string/content_authority"
+            android:exported="false"
+            android:syncable="true"/>
         <activity
             android:name=".UserSettingActivity"
             android:label="@string/UserSettingActivity" >

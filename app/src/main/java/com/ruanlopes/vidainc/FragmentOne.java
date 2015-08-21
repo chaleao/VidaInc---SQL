@@ -21,8 +21,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ruanlopes.vidainc.Helper.SQLiteHelper;
 import com.ruanlopes.vidainc.Model.Room;
+import com.ruanlopes.vidainc.database.BeaconProvider;
 
 import java.util.ArrayList;
 
@@ -106,9 +106,6 @@ public class FragmentOne extends Fragment{
         public Context contextDrag;
         public ArrayList<Room> mRoomList;
 
-        // TODO: Create data base
-        SQLiteHelper db;
-
         int width;
         int height;
 
@@ -121,9 +118,6 @@ public class FragmentOne extends Fragment{
 
             contextDrag = context;
             metrics = displayMetrics;
-
-            // TODO: Initialize database
-            db = new SQLiteHelper(contextDrag);
 
             mRoomList = new ArrayList<>();
 
@@ -241,8 +235,7 @@ public class FragmentOne extends Fragment{
 
             mRoomList.get(tag).setImage(newImage);
 
-            // TODO: Insert data in the Database here
-            db.createCircle(mRoomList.get(tag));
+            BeaconProvider.insertRoom(getActivity(), mRoomList.get(tag));
 
             invalidate();
 

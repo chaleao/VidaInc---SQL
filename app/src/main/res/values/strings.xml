@@ -15,5 +15,6 @@
     <string name="title_activity_fragment_two">FragmentTwo</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="content_authority">com.ruanlopes.vidainc</string>
 
 </resources>
