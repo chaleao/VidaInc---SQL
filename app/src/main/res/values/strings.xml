@@ -15,5 +15,7 @@
     <string name="title_activity_fragment_two">FragmentTwo</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_entered_room">EnteredRoom</string>
+    <string name="title_activity_roomctivity">Roomctivity</string>
 
 </resources>

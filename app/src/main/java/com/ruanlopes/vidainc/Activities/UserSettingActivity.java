@@ -1,4 +1,4 @@
-package com.ruanlopes.vidainc;
+package com.ruanlopes.vidainc.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.view.View;
 import android.widget.Button;
+
+import com.ruanlopes.vidainc.R;
 
 public class UserSettingActivity extends PreferenceActivity {
 

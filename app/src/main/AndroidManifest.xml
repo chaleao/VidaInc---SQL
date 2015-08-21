@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +23,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserSettingActivity"
+            android:name=".Activities.UserSettingActivity"
             android:label="@string/UserSettingActivity" >
+        </activity>
+        <activity
+            android:name=".Activities.EnteredRoom"
+            android:label="@string/title_activity_entered_room"
+            android:parentActivityName=".Activities.MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ruanlopes.vidainc.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.Roomctivity"
+            android:label="@string/title_activity_roomctivity"
+            android:parentActivityName=".Activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ruanlopes.vidainc.Activities.MainActivity" />
         </activity>
     </application>
 

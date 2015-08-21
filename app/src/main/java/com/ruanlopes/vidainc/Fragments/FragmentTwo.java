@@ -1,4 +1,4 @@
-package com.ruanlopes.vidainc;
+package com.ruanlopes.vidainc.Fragments;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -12,8 +12,10 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
+import com.ruanlopes.vidainc.Constant;
 import com.ruanlopes.vidainc.Helper.SQLiteHelper;
 import com.ruanlopes.vidainc.Model.Room;
+import com.ruanlopes.vidainc.R;
 
 import java.util.ArrayList;
 
