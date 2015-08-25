@@ -1,4 +1,4 @@
-package com.ruanlopes.vidainc.Fragments;
+package com.ruanlopes.vidainc;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -12,12 +12,11 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
-import com.ruanlopes.vidainc.Constant;
-import com.ruanlopes.vidainc.Helper.SQLiteHelper;
 import com.ruanlopes.vidainc.Model.Room;
-import com.ruanlopes.vidainc.R;
+import com.ruanlopes.vidainc.database.BeaconProvider;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FragmentTwo extends Fragment {
 
@@ -64,9 +63,7 @@ public class FragmentTwo extends Fragment {
 
         public DisplayMetrics metrics;
         public Context contextDrag;
-        public ArrayList<Room> mRoomList;
-
-        SQLiteHelper db;
+        public List<Room> mRoomList;
 
         int width;
         int height;
@@ -82,10 +79,7 @@ public class FragmentTwo extends Fragment {
             metrics = displayMetrics;
 
 
-            // TODO: This part it should connect with the database and retrieve all the data inside a ArrayList,
-            // TODO: so the ondraw can redraw everything in a new view
-            db = new SQLiteHelper(contextDrag);
-            mRoomList =  db.getAllRooms();
+            mRoomList = BeaconProvider.getAllRooms(getActivity());
 
 
             width = this.getWidth();

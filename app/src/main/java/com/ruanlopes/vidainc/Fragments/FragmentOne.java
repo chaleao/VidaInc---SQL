@@ -1,4 +1,4 @@
-package com.ruanlopes.vidainc.Fragments;
+package com.ruanlopes.vidainc;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -21,11 +21,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ruanlopes.vidainc.Activities.UserSettingActivity;
-import com.ruanlopes.vidainc.Constant;
-import com.ruanlopes.vidainc.Helper.SQLiteHelper;
 import com.ruanlopes.vidainc.Model.Room;
-import com.ruanlopes.vidainc.R;
+import com.ruanlopes.vidainc.database.BeaconProvider;
 
 import java.util.ArrayList;
 
@@ -109,9 +106,6 @@ public class FragmentOne extends Fragment{
         public Context contextDrag;
         public ArrayList<Room> mRoomList;
 
-        // TODO: Create data base
-        SQLiteHelper db;
-
         int width;
         int height;
 
@@ -125,9 +119,6 @@ public class FragmentOne extends Fragment{
             contextDrag = context;
             metrics = displayMetrics;
 
-            // TODO: Initialize database
-            db = new SQLiteHelper(contextDrag);
-
             mRoomList = new ArrayList<>();
 
             width = this.getWidth();
@@ -140,6 +131,7 @@ public class FragmentOne extends Fragment{
             for (int i = 0; i < mRoomList.size(); i++) {
 
                 Room b = mRoomList.get(i);
+                if (b.getImage() == null) continue;
                 canvas.drawBitmap(b.getImage(), b.getCurrent().x, b.getCurrent().y, null);
             }
 
@@ -244,8 +236,7 @@ public class FragmentOne extends Fragment{
 
             mRoomList.get(tag).setImage(newImage);
 
-            // TODO: Insert data in the Database here
-            db.createCircle(mRoomList.get(tag));
+            BeaconProvider.insertRoom(getActivity(), mRoomList.get(tag));
 
             invalidate();
 
