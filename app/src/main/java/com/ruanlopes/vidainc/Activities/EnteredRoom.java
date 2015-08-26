@@ -1,5 +1,6 @@
 package com.ruanlopes.vidainc.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -41,6 +42,8 @@ public class EnteredRoom extends AppCompatActivity {
         setContentView(R.layout.activity_entered_room);
 
         //TODO: GET ID SENT FROM FRAGMENT TWO TO USE TO RETRIEVE THE PROPERLY DATA FROM THE BEACON DB
+        Intent intent = getIntent();
+        long id = intent.getLongExtra("ID_OBJ", -1);
 
 
         /**
