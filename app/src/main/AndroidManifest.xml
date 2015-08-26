@@ -40,14 +40,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ruanlopes.vidainc.Activities.MainActivity" />
         </activity>
-        <activity
-            android:name=".Activities.Roomctivity"
-            android:label="@string/title_activity_roomctivity"
-            android:parentActivityName=".Activities.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ruanlopes.vidainc.Activities.MainActivity" />
-        </activity>
     </application>
 
 </manifest>

@@ -152,11 +152,13 @@ public class BeaconProvider extends ContentProvider {
     }
 
     public static synchronized Uri insertRoom(Context context, Room room) {
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(BeaconContract.RoomEntry.COLUMN_ROOM_NAME, room.getName());
         contentValues.put(BeaconContract.RoomEntry.COLUMN_ROOM_X, room.getLeft());
         contentValues.put(BeaconContract.RoomEntry.COLUMN_ROOM_Y, room.getTop());
         contentValues.put(BeaconContract.RoomEntry.COLUMN_ROOM_DRAWABLE_ID, room.getDrawable());
+
         return context.getContentResolver().insert(BeaconContract.RoomEntry.CONTENT_URI, contentValues);
     }
 
@@ -183,6 +185,8 @@ public class BeaconProvider extends ContentProvider {
 
         while (cursor.moveToNext()) {
             Room room = new Room();
+
+            room.setId(cursor.getLong(cursor.getColumnIndex("_id")));
             room.setName(cursor.getString(0));
             room.setCurrent(new Point(cursor.getInt(1), cursor.getInt(2)));
             room.setDrawable(cursor.getInt(3));

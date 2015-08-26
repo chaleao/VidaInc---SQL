@@ -40,8 +40,11 @@ public class EnteredRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entered_room);
 
+        //TODO: GET ID SENT FROM FRAGMENT TWO TO USE TO RETRIEVE THE PROPERLY DATA FROM THE BEACON DB
+
+
         /**
-         * Button from the Botton Nav
+         * Button from the Bottom Nav
          */
 
         btn1 = (ImageView) findViewById(R.id.btn1);

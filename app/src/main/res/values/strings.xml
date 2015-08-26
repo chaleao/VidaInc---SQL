@@ -3,15 +3,19 @@
 
     <string name="UserSettingActivity">Setup View</string>
 
+    <string name="title_activity_entered_room">Entered Room</string>
+    <string name="title_activity_roomctivity">Room Activity</string>
+
     <string name="action_settings">Settings</string>
 
-    <string name="pref_room">Choose the room</string>
+    <string name="pref_room">Choose the type of the room</string>
+    <string name="pref_beacon">Choose the beacons</string>
     <string name="pref_room_summary">Set the sync frequency</string>
     <string name="pref_user_name">Set username</string>
     <string name="pref_user_name_summary">Set your username</string>
 
     <string name="pref_user_profile">User Profile</string>
-    <string name="custom_settings">Custom Settings</string>
+    <string name="setup">Setup</string>
     <string name="title_activity_fragment_two">FragmentTwo</string>
 
     <string name="hello_world">Hello world!</string>

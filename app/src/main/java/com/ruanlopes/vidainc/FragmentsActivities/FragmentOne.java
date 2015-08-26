@@ -21,6 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ruanlopes.vidainc.Activities.UserSettingActivity;
 import com.ruanlopes.vidainc.Model.Room;
 import com.ruanlopes.vidainc.database.BeaconProvider;
 

@@ -1,9 +1,10 @@
 package com.ruanlopes.vidainc.Activities;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -12,8 +13,8 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.ruanlopes.vidainc.Constant;
-import com.ruanlopes.vidainc.Fragments.FragmentOne;
-import com.ruanlopes.vidainc.Fragments.FragmentTwo;
+import com.ruanlopes.vidainc.FragmentOne;
+import com.ruanlopes.vidainc.FragmentTwo;
 import com.ruanlopes.vidainc.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
 
                 if (Constant.edited == true) {
 
-                    //MainActivity.this.recreate();
-                    startActivity(new Intent(MainActivity.this, EnteredRoom.class));
+                    MainActivity.this.recreate();
+                    //startActivity(new Intent(MainActivity.this, EnteredRoom.class));
 
                 } else {
 
-                    startActivity(new Intent(MainActivity.this, EnteredRoom.class));
+                   // startActivity(new Intent(MainActivity.this, EnteredRoom.class));
 
-                    /*new AlertDialog.Builder(MainActivity.this)
+                    new AlertDialog.Builder(MainActivity.this)
                             .setTitle("Alert")
                             .setMessage("You Have to add a room")
                             .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             })
                             .setIcon(android.R.drawable.ic_dialog_alert)
-                            .show();*/
+                            .show();
                 }
 
             }

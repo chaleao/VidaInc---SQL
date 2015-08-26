@@ -1,7 +1,10 @@
-package com.ruanlopes.vidainc;
+package com.ruanlopes.vidainc.FragmentsActivities;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -12,20 +15,23 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
+import com.ruanlopes.vidainc.Activities.EnteredRoom;
+import com.ruanlopes.vidainc.Constant;
 import com.ruanlopes.vidainc.Model.Room;
+import com.ruanlopes.vidainc.R;
 import com.ruanlopes.vidainc.database.BeaconProvider;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentTwo extends Fragment {
+
+
 
     View rootView;
     private RelativeLayout mRelativeLayout;
     private DragView mDragView;
     private DisplayMetrics metrics;
 
-    ArrayList data;
 
     ImageButton editButton;
 
@@ -78,12 +84,10 @@ public class FragmentTwo extends Fragment {
             contextDrag = context;
             metrics = displayMetrics;
 
-
-            mRoomList = BeaconProvider.getAllRooms(getActivity());
-
-
             width = this.getWidth();
             height = this.getHeight();
+
+            mRoomList = BeaconProvider.getAllRooms(getActivity());
 
         }
 
@@ -92,6 +96,10 @@ public class FragmentTwo extends Fragment {
             for (int i = 0; i < mRoomList.size(); i++) {
 
                 Room b = mRoomList.get(i);
+
+                Bitmap finalImage = BitmapFactory.decodeResource(contextDrag.getResources(), b.getDrawable());
+                b.setImage(finalImage);
+
                 canvas.drawBitmap(b.getImage(), b.getCurrent().x, b.getCurrent().y, null);
             }
 
@@ -116,8 +124,12 @@ public class FragmentTwo extends Fragment {
 
                         mTouchedRoom.setSelected(true);
 
-                        //Intent intent = new Intent(this, InsideRoom.class);
-                        //startActivity(intent);
+
+                        Intent intent = new Intent(contextDrag, EnteredRoom.class);
+
+                        // TODO: CHECK CONECTIVITY BETWEEN THIS CALL AND THE DATABASE
+                        intent.putExtra("ID_OBJ", mTouchedRoom.getId());
+                        startActivity(intent);
                     }
 
                     break;
