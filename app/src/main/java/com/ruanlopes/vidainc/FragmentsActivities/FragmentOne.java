@@ -1,4 +1,4 @@
-package com.ruanlopes.vidainc;
+package com.ruanlopes.vidainc.FragmentsActivities;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -22,7 +22,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ruanlopes.vidainc.Activities.UserSettingActivity;
+import com.ruanlopes.vidainc.Constant;
 import com.ruanlopes.vidainc.Model.Room;
+import com.ruanlopes.vidainc.R;
 import com.ruanlopes.vidainc.database.BeaconProvider;
 
 import java.util.ArrayList;
@@ -231,11 +233,17 @@ public class FragmentOne extends Fragment{
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(contextDrag);
 
             String uri = sharedPrefs.getString("prefRoom", "NULL");
+            String roomName = sharedPrefs.getString("room_name", "NULL");
+
+            mRoomList.get(tag).setName(roomName);
 
             int imageResource = contextDrag.getResources().getIdentifier(uri, "drawable", contextDrag.getPackageName());
+            mRoomList.get(tag).setDrawable(imageResource);
+
             Bitmap newImage = BitmapFactory.decodeResource(contextDrag.getResources(), imageResource);
 
             mRoomList.get(tag).setImage(newImage);
+
 
             BeaconProvider.insertRoom(getActivity(), mRoomList.get(tag));
 

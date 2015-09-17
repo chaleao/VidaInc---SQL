@@ -3,6 +3,12 @@
 
     <PreferenceCategory android:title="@string/setup" >
 
+        <EditTextPreference
+            android:key="room_name"
+            android:summary="Set Room Name"
+            android:title="Room Name"
+                            />
+
         <ListPreference
             android:key="prefRoom"
             android:entries="@array/roomImgs"

@@ -13,8 +13,8 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.ruanlopes.vidainc.Constant;
-import com.ruanlopes.vidainc.FragmentOne;
-import com.ruanlopes.vidainc.FragmentTwo;
+import com.ruanlopes.vidainc.FragmentsActivities.FragmentOne;
+import com.ruanlopes.vidainc.FragmentsActivities.FragmentTwo;
 import com.ruanlopes.vidainc.R;
 
 public class MainActivity extends AppCompatActivity {

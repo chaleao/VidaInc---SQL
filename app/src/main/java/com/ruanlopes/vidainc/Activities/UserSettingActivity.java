@@ -2,7 +2,6 @@ package com.ruanlopes.vidainc.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.view.View;
@@ -14,8 +13,6 @@ public class UserSettingActivity extends PreferenceActivity {
 
 	int tagCircle;
 
-	// TODO: Create database
-	private SQLiteDatabase myDB;
 
 	Button mBackBtn;
 	Button mTrainBtn;
@@ -33,7 +30,7 @@ public class UserSettingActivity extends PreferenceActivity {
 		 * Setting List Preference Dynamically
 		 */
 
-		// TODO: Connect Data base in this part to retrieve the data necessary to populate the list on Preference Activity
+		// TODO: Retrieve the data necessary to populate the list on Preference Activity with all the beacons available
 
 /*		ListPreference listPreferenceCategory = (ListPreference) findPreference("default_category");
 
@@ -79,8 +76,8 @@ public class UserSettingActivity extends PreferenceActivity {
 			@Override
 			public void onClick(View v) {
 
-				//Intent intent = new Intent(new Intent(UserSettingActivity.this, TrainingActivity.class));
-				//startActivity(intent);
+				Intent intent = new Intent(new Intent(UserSettingActivity.this, TrainingActivity.class));
+				startActivity(intent);
 			}
 		});
 	}

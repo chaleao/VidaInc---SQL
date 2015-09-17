@@ -177,20 +177,23 @@ public class BeaconProvider extends ContentProvider {
     }
 
     public static synchronized List<Room> getAllRooms(Context context) {
+
         ArrayList<Room> rooms = new ArrayList<>();
+
         Cursor cursor = context.getContentResolver().query(BeaconContract.RoomEntry.CONTENT_URI,
                 ROOM_PROJECTION, null,
                 null, BeaconContract.RoomEntry.COLUMN_ROOM_NAME + " ASC");
         if (!cursor.moveToFirst()) throw new IllegalArgumentException("Room not found");
 
         while (cursor.moveToNext()) {
+
             Room room = new Room();
 
-            room.setId(cursor.getLong(cursor.getColumnIndex("_id")));
             room.setName(cursor.getString(0));
             room.setCurrent(new Point(cursor.getInt(1), cursor.getInt(2)));
             room.setDrawable(cursor.getInt(3));
             rooms.add(room);
+
         }
         cursor.close();
         return rooms;

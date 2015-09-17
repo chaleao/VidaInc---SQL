@@ -149,4 +149,14 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Room Type"
+        android:id="@+id/roomType"
+        android:layout_above="@+id/btn_beacon1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp"/>
+
 </RelativeLayout>

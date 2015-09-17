@@ -128,7 +128,7 @@ public class FragmentTwo extends Fragment {
                         Intent intent = new Intent(contextDrag, EnteredRoom.class);
 
                         // TODO: CHECK CONECTIVITY BETWEEN THIS CALL AND THE DATABASE
-                        intent.putExtra("ID_OBJ", mTouchedRoom.getId());
+                        intent.putExtra("name_room", mTouchedRoom.getName());
                         startActivity(intent);
                     }
 

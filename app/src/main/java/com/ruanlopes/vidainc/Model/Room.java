@@ -11,7 +11,6 @@ import android.graphics.Rect;
  */
 public class Room {
 
-    public long id;
     public String name;
     public Bitmap image;
     public Point initial, current;
@@ -146,11 +145,4 @@ public class Room {
         //resetRectangle();
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 }

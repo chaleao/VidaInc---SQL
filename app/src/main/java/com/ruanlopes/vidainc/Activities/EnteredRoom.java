@@ -7,14 +7,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ruanlopes.vidainc.R;
+import com.ruanlopes.vidainc.database.BeaconProvider;
 
 public class EnteredRoom extends AppCompatActivity {
 
+    TextView typeBtn;
     ImageView CenterButton;
     ImageView beaconTop;
+
+    String nameRoom;
 
     /**
      * Button from the Botton Nav
@@ -41,9 +46,16 @@ public class EnteredRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entered_room);
 
+        typeBtn = (TextView) findViewById(R.id.roomType);
+
         //TODO: GET ID SENT FROM FRAGMENT TWO TO USE TO RETRIEVE THE PROPERLY DATA FROM THE BEACON DB
         Intent intent = getIntent();
-        long id = intent.getLongExtra("ID_OBJ", -1);
+        nameRoom = intent.getStringExtra("name_room");
+
+        //TODO: GET from the database room name
+        typeBtn.setText(BeaconProvider.getRoom(this, nameRoom).getName());
+
+
 
 
         /**

@@ -10,6 +10,7 @@ import static com.ruanlopes.vidainc.database.BeaconContract.RoomEntry;
 /**
  * Created by Aaron on 24/03/2015.
  */
+
 public class BeaconDbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "beacon_data.db";

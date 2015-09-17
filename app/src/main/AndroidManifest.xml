@@ -22,11 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
             android:name=".database.BeaconProvider"
             android:authorities="@string/content_authority"
             android:exported="false"
-            android:syncable="true"/>
+            android:syncable="true" />
+
         <activity
             android:name=".Activities.UserSettingActivity"
             android:label="@string/UserSettingActivity" >
@@ -39,6 +41,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ruanlopes.vidainc.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.TrainingActivity"
+            android:label="@string/title_activity_training"
+            android:parentActivityName=".Activities.UserSettingActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ruanlopes.vidainc.Activities.UserSettingActivity" />
         </activity>
     </application>
 
